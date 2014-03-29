@@ -42,7 +42,8 @@ setup(
     ],
     install_requires=[
         'Django>=1.4',
-        'django-extensions>=0.9',
+        'django-model-utils',
+        'django-autoslug',
     ],
     test_suite='tests',
     include_package_data=True,

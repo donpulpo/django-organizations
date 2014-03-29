@@ -4,8 +4,8 @@ from django.db import models
 from django.db.models import permalink, get_model
 from django.utils.translation import ugettext_lazy as _
 
-from django_extensions.db.fields import AutoSlugField
-from django_extensions.db.models import TimeStampedModel
+from autoslug import AutoSlugField
+from model_utils.models import TimeStampedModel
 from organizations.managers import OrgManager, ActiveOrgManager
 
 
