@@ -14,6 +14,13 @@ if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
 
+
+with open("organizations/__init__.py", "r") as module_file:
+    for line in module_file:
+        if line.startswith("__version__"):
+            version_string = line.split("=")[1]
+            version = version_string.strip().replace("'", "")
+
 readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
@@ -22,7 +29,7 @@ setup(
     author="Ben Lopatin",
     author_email="ben@wellfire.co",
     name='django-organizations',
-    version='0.1.10',
+    version=version,
     description='Group accounts for Django',
     long_description=readme + '\n\n' + history,
     url='https://github.com/wellfire/django-organizations/',
